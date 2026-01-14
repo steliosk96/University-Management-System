@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* Nav bar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  backdrop-filter: blur(5px);
+}
+.logo {
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: auto;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 40px;
+  font-weight: 500;
+}
+.welcome-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(220, 53, 69, 0.85);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+/* Βάση για το εικονίδιο */
+.welcome-user::before {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.welcome-user.role-teacher::before {
+  content: "🎓";
+}
+
+.welcome-user.role-student::before {
+  content: "📚";
+}
+
+.welcome-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.user-auth {
+  margin-left: 40px;
+}
+.user-auth .login-btn-modal {
+  height: 40px;
+  padding: 0 35px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.user-auth .login-btn-modal:hover {
+  background: #fff;
+  color: #222;
+}
+
+/* Body (main tis selidas)*/
+body {
+  min-height: 100vh;
+  background: url(images/Backgroundphoto.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 140px 100px 0 100px;
+}
+
+/* edo tha ftiaxoume tin fotografia tis arxikis kai to keimeno */
+
+.box {
+  display: flex;
+  align-items: center;
+  margin-top: 200px;
+  gap: 100px;
+  background: rgba(247, 0, 41, 0.171);
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.box-image {
+  width: 800px;
+  border-radius: 10px;
+}
+
+.box-text {
+  font-size: 30px;
+  color: #fff;
+}
+
+/* css gia ton xarti kai to kimeno */
+
+section {
+  margin-top: 50px;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  gap: 5em;
+  color: #fff;
+  background: rgba(247, 0, 41, 0.171);
+}
+.map-box {
+  margin-right: 200px;
+  max-width: 400px;
+}
+h5 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+p {
+  font-size: 30px;
+  max-width: 600px;
+}
+iframe {
+  border-radius: 10px;
+  margin-top: 50px;
+  border: none;
+  width: 300px;
+  height: 300px;
+  transition: 0.3s ease-in-out;
+}
+iframe:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+/* css gia to mobile */
+
+@media (max-width: 700px) {
+  .box {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .box-image {
+    width: 100%;
+  }
+  .box-text {
+    align-items: center;
+    font-size: 18px;
+  }
+  header {
+    padding: 20px 20px;
+    align-items: center;
+  }
+
+  /* css gia na kanoume mobile friendly to xarti kai to kimeno */
+  section {
+    flex-direction: column;
+    text-align: center;
+    margin-right: 0;
+  }
+  .map-box {
+    margin: 0;
+    max-width: 100%;
+  }
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+  .logo1 {
+    font-size: 10px;
+  }
+  p {
+    font-size: 15px;
+    max-width: 600px;
+  }
+}
+
+/* part 2 ergasias */
+
+.main-content {
+  padding-top: 150px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
+.centered-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.mitropolitiko-card {
+  background-color: #fff;
+  border: none;
+  border-top: 4px solid #dc3545 !important; /* Η κόκκινη γραμμή */
+  border-radius: 8px !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.box-narrow {
+  width: 100%;
+  max-width: 600px;
+}
+
+.box-wide {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.text-mitropolitiko {
+  color: #dc3545 !important;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}

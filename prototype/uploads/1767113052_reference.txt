@@ -1,0 +1,3 @@
+https://www.geeksforgeeks.org/java/avl-tree-program-in-java/
+
+https://www.geeksforgeeks.org/dsa/insertion-in-an-avl-tree/

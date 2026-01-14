@@ -1,0 +1,106 @@
+https://www.geeksforgeeks.org/java/avl-tree-program-in-java/
+
+https://www.geeksforgeeks.org/dsa/insertion-in-an-avl-tree/
+
+
+
+package com.cn5005.cw1;
+
+//https://junit.org/junit5/docs/current/user-guide/
+//https://www.baeldung.com/junit-5
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+
+public class AVLTreeTest {
+    
+    private AVLTree tree;
+
+    // kanei run kathe fora prin to test
+    @BeforeEach
+    void setUp() {
+        tree = new AVLTree();
+    }
+
+    
+    // 1. test count
+    @Test
+    void testInsertAndDuplicates() {
+        
+        tree.root = tree.insert(tree.root, 10);
+        tree.root = tree.insert(tree.root, 10); 
+        tree.root = tree.insert(tree.root, 5);  
+
+        
+        Node node10 = tree.search(tree.root, 10);
+        assertNotNull(node10, "prepei na uparxi ena 10 sto tree");
+        assertEquals(2, node10.count, "to count prepei na einai 2");
+
+        
+        Node node5 = tree.search(tree.root, 5);
+        assertNotNull(node5);
+        assertEquals(1, node5.count);
+    }
+
+    
+    // 2. test peristrofes
+    @Test
+    void testAVLBalancing() {
+        System.out.println("Running testAVLBalancing");
+
+        tree.root = tree.insert(tree.root, 30);
+        tree.root = tree.insert(tree.root, 20);
+        tree.root = tree.insert(tree.root, 10);
+
+        
+        assertNotNull(tree.root);
+        assertEquals(20, tree.root.key);
+        
+        
+        assertEquals(10, tree.root.left.key);
+        assertEquals(30, tree.root.right.key);
+    }
+
+    // 3. test diagrafis
+    
+    @Test
+    void testDelete() {
+        System.out.println("Running testDelete");
+
+        tree.root = tree.insert(tree.root, 50);
+        tree.root = tree.insert(tree.root, 50); // Count = 2
+        
+       
+        tree.root = tree.delete(tree.root, 50);
+        Node res = tree.search(tree.root, 50);
+        assertNotNull(res);
+        assertEquals(1, res.count);
+
+       
+        tree.root = tree.delete(tree.root, 50);
+        Node deleted = tree.search(tree.root, 50);
+        assertNull(deleted, "to 50 tora tha prepei na exei diagrafti");
+    }
+
+    // 4. test allagi kleidiou 
+    @Test
+    void testChangeKey() {
+        System.out.println("Running testChangeKey");
+
+        tree.root = tree.insert(tree.root, 100);
+        tree.root = tree.insert(tree.root, 100); 
+
+       
+        tree.changeKey(100, 200);
+
+      
+        assertNull(tree.search(tree.root, 100));
+
+        
+        Node node200 = tree.search(tree.root, 200);
+        assertNotNull(node200);
+        assertEquals(2, node200.count, "to count prepei na mini 2");
+    }
+}
